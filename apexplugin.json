@@ -1,0 +1,34 @@
+{
+  "name" : "Vertical Timeline",
+  "version" : "1.0",
+  "description" : "Vertical Timeline Plugin with Menu Options.",
+  "keywords" : ["APEX", "TEMPLATE_COMPONENT", "TIMELINE"],
+  "homepage" : "https://github.com/rodrigomesquitaorclapex/verticalTimeline",
+  "bugs" : {
+    "url" : "https://github.com/rodrigomesquitaorclapex/verticalTimeline/issues",
+    "email" : "rodrigomesquita.ti@gmail.com"
+  },
+  "license" : "MIT",
+  "author" : {
+    "name" : "Rodrigo Mesquita",
+    "email" : "rodrigomesquita.ti@gmail.com",
+    "url" : "",
+    "donationUrl" : "https://paypal.me/mesquitarodr"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/rodrigomesquitaorclapex/verticalTimeline.git"
+  },
+  "oracle" : {
+    "versions" : ["12.1.0.1","12.2.0.1","18.0.0.0","19.0.0.0","21.0.0.0"],
+    "apex" : {
+      "versions" : ["23.2"],
+      "plugin" : {
+        "internalName" : "COM.RODRIGOMESQUITA.VERTICAL_TIMELINE",
+        "type" : "template component",
+        "demo" : "https://bit.ly/VerticalTimeLine",
+        "previewImage" : "https://raw.githubusercontent.com/rodrigomesquitaorclapex/verticalTimeline/main/assets/plugin_preview.jpg"
+      }
+    }
+  }
+}
