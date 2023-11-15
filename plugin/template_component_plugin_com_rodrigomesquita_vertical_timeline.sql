@@ -18,30 +18,30 @@ whenever sqlerror exit sql.sqlcode rollback
 --------------------------------------------------------------------------------
 begin
 wwv_flow_imp.import_begin (
- p_version_yyyy_mm_dd=>'2023.10.31'
-,p_release=>'23.2.0-17'
-,p_default_workspace_id=>41755996400255984956
-,p_default_application_id=>203849
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>7805672918286188
+,p_default_application_id=>127
 ,p_default_id_offset=>0
-,p_default_owner=>'RM_SANDBOX'
+,p_default_owner=>'WKSP_RODRIGO'
 );
 end;
 /
  
-prompt APPLICATION 203849 - Vertical Timeline
+prompt APPLICATION 127 - Plugins
 --
 -- Application Export:
---   Application:     203849
---   Name:            Vertical Timeline
---   Date and Time:   13:23 Wednesday November 1, 2023
---   Exported By:     RODRIGOMESQUITA.TI@GMAIL.COM
+--   Application:     127
+--   Name:            Plugins
+--   Date and Time:   15:02 Wednesday November 15, 2023
+--   Exported By:     RODRIGO.MESQUITA
 --   Flashback:       0
 --   Export Type:     Component Export
 --   Manifest
---     PLUGIN: 8171856292653832158
+--     PLUGIN: 675469715610051403
 --   Manifest End
---   Version:         23.2.0-17
---   Instance ID:     63113759365424
+--   Version:         23.1.5
+--   Instance ID:     7605533469494042
 --
 
 begin
@@ -52,7 +52,7 @@ end;
 prompt --application/shared_components/plugins/template_component/com_rodrigomesquita_vertical_timeline
 begin
 wwv_flow_imp_shared.create_plugin(
- p_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675469715610051403)
 ,p_plugin_type=>'TEMPLATE COMPONENT'
 ,p_theme_id=>nvl(wwv_flow_application_install.get_theme_id, '')
 ,p_name=>'COM.RODRIGOMESQUITA.VERTICAL_TIMELINE'
@@ -75,7 +75,7 @@ wwv_flow_imp_shared.create_plugin(
 ,p_api_version=>2
 ,p_report_body_template=>'<ul class="vt-container">#APEX$ROWS#</ul>'
 ,p_report_row_template=>'<li #APEX$ROW_IDENTIFICATION#>#APEX$PARTIAL#</li>'
-,p_report_placeholder_count=>1
+,p_report_placeholder_count=>3
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -91,63 +91,67 @@ wwv_flow_imp_shared.create_plugin(
 '</p>'))
 ,p_version_identifier=>'1.0'
 ,p_about_url=>'https://github.com/rodrigomesquitaorclapex/verticalTimeline'
-,p_files_version=>57
+,p_files_version=>10
 );
 wwv_flow_imp_shared.create_plugin_attribute(
- p_id=>wwv_flow_imp.id(8175259652335624134)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
-,p_attribute_scope=>'COMPONENT'
-,p_attribute_sequence=>1
-,p_display_sequence=>10
-,p_static_id=>'VT_SUBTEXT'
-,p_prompt=>'SubText'
-,p_attribute_type=>'TEXT'
-,p_is_required=>false
-,p_escape_mode=>'HTML'
-,p_is_translatable=>false
-);
-wwv_flow_imp_shared.create_plugin_attribute(
- p_id=>wwv_flow_imp.id(8174935304622868614)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675470444568051471)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
 ,p_static_id=>'VT_DESC'
 ,p_prompt=>'Description'
-,p_attribute_type=>'TEXT'
+,p_attribute_type=>'SESSION STATE VALUE'
 ,p_is_required=>false
 ,p_escape_mode=>'HTML'
+,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
 );
 wwv_flow_imp_shared.create_plugin_attribute(
- p_id=>wwv_flow_imp.id(8174938251811870030)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675470774199051471)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
-,p_display_sequence=>1
-,p_static_id=>'VT_TEXT'
-,p_prompt=>'Text'
-,p_attribute_type=>'TEXT'
+,p_display_sequence=>30
+,p_static_id=>'VT_ICON'
+,p_prompt=>'Icon Class'
+,p_attribute_type=>'SESSION STATE VALUE'
 ,p_is_required=>false
 ,p_escape_mode=>'HTML'
+,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
 );
 wwv_flow_imp_shared.create_plugin_attribute(
- p_id=>wwv_flow_imp.id(8175983011354628368)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675471191242051471)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
-,p_static_id=>'VT_ICON'
-,p_prompt=>' Icon'
-,p_attribute_type=>'TEXT'
+,p_static_id=>'VT_SUBTEXT'
+,p_prompt=>'Subtext'
+,p_attribute_type=>'SESSION STATE VALUE'
 ,p_is_required=>false
 ,p_escape_mode=>'HTML'
+,p_column_data_types=>'VARCHAR2'
+,p_is_translatable=>false
+);
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(675471573226051472)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
+,p_attribute_scope=>'COMPONENT'
+,p_attribute_sequence=>5
+,p_display_sequence=>50
+,p_static_id=>'VT_TEXT'
+,p_prompt=>'Text'
+,p_attribute_type=>'SESSION STATE VALUE'
+,p_is_required=>false
+,p_escape_mode=>'HTML'
+,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
 );
 wwv_flow_imp_shared.create_plugin_act_template(
- p_id=>wwv_flow_imp.id(8772971887677521516)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675483459590088583)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_name=>'Menu'
 ,p_type=>'MENU'
 ,p_template=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -157,13 +161,12 @@ wwv_flow_imp_shared.create_plugin_act_template(
 '</button> #MENU#'))
 );
 wwv_flow_imp_shared.create_plugin_act_position(
- p_id=>wwv_flow_imp.id(8774253308245526853)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675482952375083221)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_name=>'Menu'
 ,p_static_id=>'MENU_ACTION'
 ,p_display_sequence=>10
-,p_type=>'TEMPLATE'
-,p_template_id=>wwv_flow_imp.id(8772971887677521516)
+,p_type=>'LINK'
 );
 end;
 /
@@ -185,8 +188,8 @@ end;
 /
 begin
 wwv_flow_imp_shared.create_plugin_file(
- p_id=>wwv_flow_imp.id(8172220334587837713)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675481332972073120)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_file_name=>'vertical_timeline.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
@@ -209,8 +212,8 @@ end;
 /
 begin
 wwv_flow_imp_shared.create_plugin_file(
- p_id=>wwv_flow_imp.id(9403141111945766549)
-,p_plugin_id=>wwv_flow_imp.id(8171856292653832158)
+ p_id=>wwv_flow_imp.id(675481595895073122)
+,p_plugin_id=>wwv_flow_imp.id(675469715610051403)
 ,p_file_name=>'vertical_timeline.min.css'
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
