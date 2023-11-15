@@ -1,6 +1,6 @@
 {
   "name" : "Vertical Timeline",
-  "version" : "1.0",
+  "version" : "1.1",
   "description" : "Vertical Timeline Plugin with Menu Options.",
   "keywords" : ["APEX", "TEMPLATE_COMPONENT", "TIMELINE"],
   "homepage" : "https://github.com/rodrigomesquitaorclapex/verticalTimeline",
@@ -22,7 +22,7 @@
   "oracle" : {
     "versions" : ["12.1.0.1","12.2.0.1","18.0.0.0","19.0.0.0","21.0.0.0"],
     "apex" : {
-      "versions" : ["23.2"],
+      "versions" : ["23.1","23.2"],
       "plugin" : {
         "internalName" : "COM.RODRIGOMESQUITA.VERTICAL_TIMELINE",
         "type" : "template component",
