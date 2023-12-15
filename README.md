@@ -92,3 +92,6 @@ FROM DUAL
 ## Demo ##
 https://bit.ly/VerticalTimeLine
 
+## Read More ##
+https://apexblog.dev/apex-template-components-and-10-lines-of-html-to-create-a-plugin
+
